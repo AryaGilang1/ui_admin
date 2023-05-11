@@ -1,0 +1,3 @@
+runtime: nodejs
+env: standard
+service: ui-admin
