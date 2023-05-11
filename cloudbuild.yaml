@@ -1,10 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-    gcloud app deploy ./app.yaml --project=$myproject-123200156 --version=cust-$main
-    gcloud app services set-traffic cust --splits $main=1 --migrate --project=$myproject-123200156
-substitutions:
-  _SERVICE: ui_admin
+- name: gcr.io/cloud-builders/gcloud
+  args: ['app', 'deploy', 'app.yaml']
+timeout: '1600s'
